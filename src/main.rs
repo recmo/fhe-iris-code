@@ -30,9 +30,9 @@ fn half_adder(a: &FheUint256, b: &FheUint256) -> (FheUint256, FheUint256) {
 }
 
 fn full_adder(a: &FheUint256, b: &FheUint256, carry: &FheUint256) -> (FheUint256, FheUint256) {
-    let (s, c) = half_adder(a, b);
-    let sum = &s ^ carry;
-    let carry = c | (s & carry);
+    let (sum, carry_1) = half_adder(a, b);
+    let (sum, carry_2) = half_adder(&sum, carry);
+    let carry = carry_1 | carry_2;
     (sum, carry)
 }
 
