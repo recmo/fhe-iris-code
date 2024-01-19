@@ -14,8 +14,8 @@ A *fraction hamming distance* between two such iriscodes $\mathtt a$ and $\matht
 
 $$
 \begin{aligned}
-d &= \mathtt{a.data} ⊕ \mathtt{b.data} \\[.5em]
-\overline{m} &= \neg(\mathtt{a.mask} \vee \mathtt{b.mask}) \\[.5em]
+d &= \mathtt{a.data} ⊕ \mathtt{b.data} \\
+\overline{m} &= \neg(\mathtt{a.mask} \vee \mathtt{b.mask}) \\
 \mathrm{fhd}(\mathtt{a}, \mathtt{b}) &= \frac
 {\mathtt{popcount}(d ∧ \overline{m})}
 {\mathtt{popcount}(\overline{m})}
